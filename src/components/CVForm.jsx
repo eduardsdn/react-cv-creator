@@ -1,11 +1,13 @@
 import PersonalInfoForm from "./PersonalInfoForm"
-import EducationInfoForm from "./ExperienceForm"
+import EducationForm from "./EducationForm"
+import ExperienceForm from "./ExperienceForm"
 
 export default function CVForm() {
     return(
         <section className="cv-form">
             <PersonalInfoForm />
-            <EducationInfoForm />
+            <ExperienceForm />
+            <EducationForm />
         </section>
     )
 }
