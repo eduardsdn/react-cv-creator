@@ -15,6 +15,13 @@ function App() {
     description: "",
   })
 
+  const [experience, setExperience] = React.useState({
+    position: "",
+    company: "",
+    dateFrom: "",
+    dateTo: "",
+  })
+
   function updatePersonalInfo(event){
     setPersonalInfo(prevPersonalInfo => {
       return {
@@ -22,16 +29,23 @@ function App() {
         [event.target.name]: event.target.value
       }
     })
+  }
 
-    // console.log(personalInfo)
+  function updateExperience(event){
+    setExperience(prevExperience => {
+      return {
+        ...prevExperience,
+        [event.target.name]: event.target.value
+      }
+    })
   }
 
   return (
     <div className="App">
       <Header /> 
       <main className="main-content">
-        <CVForm updatePersonalInfo={updatePersonalInfo}/>
-        <CVPreview personalInfo={personalInfo}/>
+        <CVForm updatePersonalInfo={updatePersonalInfo} updateExperience={updateExperience}/>
+        <CVPreview personalInfo={personalInfo} experience={experience}/>
       </main>
     </div>
   );
