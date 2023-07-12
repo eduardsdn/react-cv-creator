@@ -42,12 +42,15 @@ export default function CVPreview(props){
                         <h2 className="preview-subtitle">Experience</h2>
                             <hr />
                             <CVPreviewExperience experience={props.experience}/>
+                            <CVPreviewExperience experience={props.experience}/>
+                            <CVPreviewExperience experience={props.experience}/>
                     </div>
 
                     <div className="preview-education">
                         <h2 className="preview-subtitle">Education</h2>
                             <hr />
-                            <CVPreviewEducation />
+                            <CVPreviewEducation education={props.education}/>
+                            <CVPreviewEducation education={props.education}/>
                     </div>
 
                 </div>

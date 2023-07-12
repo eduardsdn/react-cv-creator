@@ -7,7 +7,7 @@ export default function CVForm(props) {
         <div className="cv-form">
             <PersonalInfoForm updatePersonalInfo={props.updatePersonalInfo}/>
             <ExperienceForm updateExperience={props.updateExperience}/>
-            <EducationForm />
+            <EducationForm updateEducation={props.updateEducation}/>
         </div>
     )
 }

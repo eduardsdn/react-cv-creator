@@ -83,13 +83,12 @@ table {
 .cv-form {
     margin-top: 50px;
     background-color: #C8B6A6;
-    width: 800px;
-    /* height: 900px;  */
+    min-width: 800px;
     padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
-    /* fixed values !!! */
+    box-shadow: rgba(149, 157, 165, 0.726) 0px 8px 24px;
 }
 
 /* Sub forms */
@@ -108,6 +107,12 @@ table {
     border: inherit;
     border-radius: 5px;
 }
+
+.subform textarea {
+    height: 100px;
+    resize: none;
+}
+
 
 .subform .title {
     font-size: 24px;
@@ -144,10 +149,10 @@ label {
 /* CV Preview */
 .cv-preview {
     margin-top: 50px;
-    border: solid;
+    background-color: #f3f1f1;
     width: 800px;
     overflow-y: hidden;
-    /* height: 1200px; */
+    box-shadow: rgba(149, 157, 165, 0.726) 0px 8px 24px;
 }
 
 .preview-main-content {
@@ -171,6 +176,7 @@ label {
 .preview-description-text {
     font-style: italic;
     line-height: 130%;
+    overflow-wrap: break-word;
 }
 
 /* CV Preview Header */
@@ -194,13 +200,11 @@ label {
 /* CV Preview Side bar */
 
 .preview-sideBar {
+    background-color: #e4e4e4;
     width: fit-content;
-    background-color: rgb(236, 236, 236);
     padding-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
-
-    /* border: solid; */
 }
 
 .photo {

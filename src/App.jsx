@@ -22,6 +22,14 @@ function App() {
     dateTo: "",
   })
 
+  const [education, setEducation] = React.useState({
+    university: "",
+    degree: "",
+    subject: "",
+    dateFrom: "",
+    dateTo: "",
+  })
+
   function updatePersonalInfo(event){
     setPersonalInfo(prevPersonalInfo => {
       return {
@@ -40,12 +48,28 @@ function App() {
     })
   }
 
+  function updateEducation(event){
+    setEducation(prevEducation => {
+      return {
+        ...prevEducation,
+        [event.target.name]: event.target.value
+      }
+    })
+  }
+  
+
   return (
     <div className="App">
       <Header /> 
       <main className="main-content">
-        <CVForm updatePersonalInfo={updatePersonalInfo} updateExperience={updateExperience}/>
-        <CVPreview personalInfo={personalInfo} experience={experience}/>
+        <CVForm 
+        updatePersonalInfo={updatePersonalInfo} 
+        updateExperience={updateExperience} 
+        updateEducation={updateEducation}/>
+        <CVPreview 
+        personalInfo={personalInfo} 
+        experience={experience}
+        education={education}/>
       </main>
     </div>
   );
