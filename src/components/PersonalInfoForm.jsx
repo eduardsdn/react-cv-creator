@@ -1,15 +1,16 @@
-export default function PersonalInfoForm(){
+export default function PersonalInfoForm(props){
     return(
     <div className="personal-info subform">
         <h1 className="subform title">Personal Information</h1>
-        <input type="text" placeholder="First Name"/>
-        <input type="text" placeholder="Last Name"/>
-        <input type="text" placeholder="Title"/>
+        <input type="text" name="firstName" placeholder="First Name" onChange={props.updatePersonalInfo}/>
+        <input type="text" name="lastName" placeholder="Last Name" onChange={props.updatePersonalInfo}/>
+        <input type="text" name="title" placeholder="Title" onChange={props.updatePersonalInfo}/>
         <input type="file" />
-        <input type="text" placeholder="Address"/>
-        <input type="tel" placeholder="Phone number"/>
-        <input type="email" placeholder="Email" />
-        <textarea placeholder="Description"></textarea>
+        <input type="text" name="address" placeholder="Address" onChange={props.updatePersonalInfo}/>
+        <input type="tel" name="phone" placeholder="Phone number" onChange={props.updatePersonalInfo}/>
+        <input type="email" name="email" placeholder="Email" onChange={props.updatePersonalInfo}/>
+
+        <textarea name="description" placeholder="Description" onChange={props.updatePersonalInfo}></textarea>
     </div>
     )
 }
