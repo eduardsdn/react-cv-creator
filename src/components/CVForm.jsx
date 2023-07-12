@@ -4,10 +4,10 @@ import ExperienceForm from "./ExperienceForm"
 
 export default function CVForm() {
     return(
-        <section className="cv-form">
+        <div className="cv-form">
             <PersonalInfoForm />
             <ExperienceForm />
             <EducationForm />
-        </section>
+        </div>
     )
 }

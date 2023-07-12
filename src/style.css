@@ -52,6 +52,7 @@ table {
 /* General */
 .App {
     font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 30px;
 }
 
 /* Header */
@@ -73,6 +74,8 @@ table {
 .main-content {
     padding-left: 100px;
     padding-right: 100px;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* CVForm */
@@ -136,4 +139,115 @@ label {
     cursor: pointer;
     color: #F1DEC9;
     background-color:#8D7B68;
+}
+
+/* CV Preview */
+.cv-preview {
+    margin-top: 50px;
+    border: solid;
+    width: 800px;
+    overflow-y: hidden;
+    /* height: 1200px; */
+}
+
+.preview-main-content {
+    /* height: 100%; */
+    display: flex;
+    /* background-color: aqua; */
+    height:100%;
+}
+
+.preview-main-content-right {
+    padding: 15px;
+}
+
+.preview-subtitle {
+    margin-top: 30px;
+    font-size: 17px;
+    font-weight: 600;
+} 
+
+.preview-description-text {
+    font-style: italic;
+    line-height: 130%;
+}
+
+/* CV Preview Header */
+.preview-header {
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #C8B6A6;
+}
+
+.preview-name {
+    font-size: 46px;
+    font-weight: 700;
+}
+
+.preview-title {
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+/* CV Preview Side bar */
+
+.preview-sideBar {
+    width: fit-content;
+    background-color: rgb(236, 236, 236);
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    /* border: solid; */
+}
+
+.photo {
+    width: 200px;
+}
+
+.presonalDetailsPreview-title {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #80705f;
+}
+
+.presonalDetailsPreview p{
+    margin-top: 8px;
+}
+
+/* CV Preview Experience */
+
+.preview-expeience-content {
+    display: flex;
+    margin-top: 20px;
+}
+
+.timespan {
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.timespan .from{
+    margin-right: 5px;
+}
+
+.timespan .to{
+    margin-left: 5px;
+}
+
+.place-of-occupation {
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.place-of-occupation-top {
+    font-weight: 700;
+}
+
+.place-of-occupation-bottom {
+    margin-top: 10px;
+    font-size: 16px;
 }
