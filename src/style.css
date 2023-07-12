@@ -165,6 +165,7 @@ label {
     margin-top: 30px;
     font-size: 17px;
     font-weight: 600;
+    color: #80705f;
 } 
 
 .preview-description-text {
@@ -250,4 +251,11 @@ label {
 .place-of-occupation-bottom {
     margin-top: 10px;
     font-size: 16px;
+}
+
+/* CV Preview Education */
+
+.preview-education-content {
+    display: flex;
+    margin-top: 20px;
 }

@@ -1,5 +1,6 @@
 import CVPreviewHeader from "./CVPreviewHeader"
 import CVPreviewExperience from "./CVPreviewExpreience"
+import CVPreviewEducation from "./CVPreviewEducation"
 import defaultPhoto from "../assets/default_photo.jpg"
 
 export default function CVPreview(){
@@ -35,9 +36,20 @@ export default function CVPreview(){
                     </div>
 
                     <div className="preview-experience">
-                    <h2 className="preview-subtitle">Experience</h2>
-                        <hr />
-                        <CVPreviewExperience />
+                        <h2 className="preview-subtitle">Experience</h2>
+                            <hr />
+                            <CVPreviewExperience />
+                            <CVPreviewExperience />
+                            <CVPreviewExperience />
+                            <CVPreviewExperience />
+                    </div>
+
+                    <div className="preview-education">
+                        <h2 className="preview-subtitle">Education</h2>
+                            <hr />
+                            <CVPreviewEducation />
+                            <CVPreviewEducation />
+                            <CVPreviewEducation />
                     </div>
 
                 </div>
