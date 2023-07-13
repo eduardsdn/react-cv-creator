@@ -15,12 +15,15 @@ function App() {
     description: "",
   })
 
+
   const [experience, setExperience] = React.useState({
+    id: 1,
     position: "",
     company: "",
     dateFrom: "",
     dateTo: "",
   })
+  
 
   const [education, setEducation] = React.useState({
     university: "",
@@ -39,9 +42,9 @@ function App() {
     })
   }
 
-  function updateExperience(event){
+  function updateExperience(event, id){
     setExperience(prevExperience => {
-      return {
+      return {                                          
         ...prevExperience,
         [event.target.name]: event.target.value
       }
@@ -56,13 +59,71 @@ function App() {
       }
     })
   }
+// EXPERIENCES-----------------------------------------------------------------------------
+  const [experiences, setExperiences] = React.useState([
+    {
+    id: 1,
+    position: "",
+    company: "",
+    dateFrom: "",
+    dateTo: "",
+    }
+  ])
+  
+  function addExperience(){
+    const experience = {
+      id: Date.now(),
+      position: "",
+      company: "",
+      dateFrom: "",
+      dateTo: "",
+    }
+
+    setExperiences(prevExperiences => {
+      return [
+        ...prevExperiences,
+        experience
+      ]
+    })
+
+    console.log(experiences)
+  }
+
+  function deleteExperience(id){
+    setExperiences(prevExperiences => {
+      return (
+        prevExperiences.filter(experience => experience.id !== id)
+      )
+    })
+    console.log(id)
+  }
+
+  // function updateExperience(event, id) {
+  //   console.log(id)
+  //   setExperiences(prevExperiences => {
+  //     if(event.target.id === id){
+  //       return [
+  //         ...prevEducation,
+  //         {[event.target.name]: event.target.value}
+  //       ]
+  //     }
+  //   }
+  //     )
+  //   }
+  // }
+// MAKE THIS WORK!!!!!! ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+// EXPERIENCES-----------------------------------------------------------------------------
   
 
   return (
     <div className="App">
       <Header /> 
       <main className="main-content">
-        <CVForm 
+        <CVForm
+        experiences={experiences}
+        addExperience={addExperience}
+        deleteExperience={deleteExperience}
         updatePersonalInfo={updatePersonalInfo} 
         updateExperience={updateExperience} 
         updateEducation={updateEducation}/>
