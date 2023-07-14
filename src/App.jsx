@@ -86,7 +86,7 @@ function App() {
       ]
     })
 
-    console.log(experiences)
+    // console.log(experiences)
   }
 
   function deleteExperience(id){
@@ -98,24 +98,22 @@ function App() {
     console.log(id)
   }
 
-  // function updateExperience(event, id) {
-  //   console.log(id)
-  //   setExperiences(prevExperiences => {
-  //     if(event.target.id === id){
-  //       return [
-  //         ...prevEducation,
-  //         {[event.target.name]: event.target.value}
-  //       ]
-  //     }
-  //   }
-  //     )
-  //   }
-  // }
+  function updateExperience(event, id){
+    setExperiences(experiences.map(experience => {
+      if(experience.id === id) {
+        return{...experience, [event.target.name] : event.target.value}
+      }
+      else {
+        return experience
+      }
+    }))
+    console.log(experiences)
+  }
+
 // MAKE THIS WORK!!!!!! ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 // EXPERIENCES-----------------------------------------------------------------------------
   
-
   return (
     <div className="App">
       <Header /> 
