@@ -16,12 +16,23 @@ export default function CVForm(props) {
         />
     ))
 
+    const educationElements = props.educations.map(education => (
+        <EducationForm 
+            key={education.id}
+            id={education.id}
+            updateEducation={props.updateEducation}
+            addEducation={props.addEducation}
+            deleteEducation={props.deleteEducation}
+        />
+    ))
+
     return(
         <div className="cv-form">
             <PersonalInfoForm updatePersonalInfo={props.updatePersonalInfo}/>
             {experienceElements}
             {/* <ExperienceForm updateExperience={props.updateExperience} addExperience={props.addExperience}/> */}
-            <EducationForm updateEducation={props.updateEducation}/>
+            {educationElements}
+            {/* <EducationForm updateEducation={props.updateEducation}/> */}
         </div>
     )
 }

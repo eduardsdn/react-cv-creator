@@ -23,6 +23,7 @@ function App() {
     dateFrom: "",
     dateTo: "",
   })
+  // RUDIMENTARY ^^^
   
 
   const [education, setEducation] = React.useState({
@@ -32,6 +33,7 @@ function App() {
     dateFrom: "",
     dateTo: "",
   })
+  // RUDIMENTARY ^^^
 
   function updatePersonalInfo(event){
     setPersonalInfo(prevPersonalInfo => {
@@ -42,23 +44,14 @@ function App() {
     })
   }
 
-  function updateExperience(event, id){
-    setExperience(prevExperience => {
-      return {                                          
-        ...prevExperience,
-        [event.target.name]: event.target.value
-      }
-    })
-  }
-
-  function updateEducation(event){
-    setEducation(prevEducation => {
-      return {
-        ...prevEducation,
-        [event.target.name]: event.target.value
-      }
-    })
-  }
+  // function updateEducation(event){
+  //   setEducation(prevEducation => {
+  //     return {
+  //       ...prevEducation,
+  //       [event.target.name]: event.target.value
+  //     }
+  //   })
+  // }
 // EXPERIENCES-----------------------------------------------------------------------------
   const [experiences, setExperiences] = React.useState([
     {
@@ -109,10 +102,58 @@ function App() {
     }))
     console.log(experiences)
   }
-
-// MAKE THIS WORK!!!!!! ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 // EXPERIENCES-----------------------------------------------------------------------------
+
+// EDUCATION -----------------------------------------------------------------------------
+const [educations, setEducations] = React.useState([
+  {
+  id: 1,
+  university: "",
+  degree: "",
+  subject: "",
+  dateFrom: "",
+  dateTo: "",
+  }
+])
+
+function addEducation() {
+  const education = {
+    id: Date.now(),
+    university: "",
+    degree: "",
+    subject: "",
+    dateFrom: "",
+    dateTo: "",
+  }
+  setEducations(prevEducations => {
+    return [
+      ...prevEducations,
+      education
+    ]
+  })
+}
+
+function deleteEducation(id){
+  setEducations(prevEducations => {
+    return (
+      prevEducations.filter(education => education.id !== id)
+    )
+  })
+  console.log(id)
+}
+
+function updateEducation(event, id){
+  setEducations(educations.map(education => {
+    if(education.id === id) {
+      return{...education, [event.target.name] : event.target.value}
+    }
+    else {
+      return education
+    }
+  }))
+  console.log(educations)
+}
+// EDUCATION-----------------------------------------------------------------------------
   
   return (
     <div className="App">
@@ -122,8 +163,13 @@ function App() {
         experiences={experiences}
         addExperience={addExperience}
         deleteExperience={deleteExperience}
-        updatePersonalInfo={updatePersonalInfo} 
         updateExperience={updateExperience} 
+
+        updatePersonalInfo={updatePersonalInfo} 
+        
+        educations={educations}
+        addEducation={addEducation}
+        deleteEducation={deleteEducation}
         updateEducation={updateEducation}/>
         <CVPreview 
         personalInfo={personalInfo} 
