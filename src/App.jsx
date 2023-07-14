@@ -16,13 +16,13 @@ function App() {
   })
 
 
-  const [experience, setExperience] = React.useState({
-    id: 1,
-    position: "",
-    company: "",
-    dateFrom: "",
-    dateTo: "",
-  })
+  // const [experience, setExperience] = React.useState({
+  //   id: 1,
+  //   position: "",
+  //   company: "",
+  //   dateFrom: "",
+  //   dateTo: "",
+  // })
   // RUDIMENTARY ^^^
   
 
@@ -44,14 +44,6 @@ function App() {
     })
   }
 
-  // function updateEducation(event){
-  //   setEducation(prevEducation => {
-  //     return {
-  //       ...prevEducation,
-  //       [event.target.name]: event.target.value
-  //     }
-  //   })
-  // }
 // EXPERIENCES-----------------------------------------------------------------------------
   const [experiences, setExperiences] = React.useState([
     {
@@ -160,20 +152,20 @@ function updateEducation(event, id){
       <Header /> 
       <main className="main-content">
         <CVForm
+        updatePersonalInfo={updatePersonalInfo}
+
         experiences={experiences}
         addExperience={addExperience}
         deleteExperience={deleteExperience}
         updateExperience={updateExperience} 
 
-        updatePersonalInfo={updatePersonalInfo} 
-        
         educations={educations}
         addEducation={addEducation}
         deleteEducation={deleteEducation}
         updateEducation={updateEducation}/>
         <CVPreview 
         personalInfo={personalInfo} 
-        experience={experience}
+        experiences={experiences}
         education={education}/>
       </main>
     </div>

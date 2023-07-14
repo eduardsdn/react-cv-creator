@@ -5,6 +5,17 @@ import defaultPhoto from "../assets/default_photo.jpg"
 
 export default function CVPreview(props){
 
+    const cvPreviewExperienceElements = props.experiences.map(experience => (
+        <CVPreviewExperience
+        key = {experience.id}
+        id = {experience.id}
+        position = {experience.position}
+        company = {experience.company}
+        dateFrom = {experience.dateFrom}
+        dateTo = {experience.dateTo}
+        />
+    ))
+
     // console.log(props.personalInfo)
 
     return(
@@ -41,9 +52,7 @@ export default function CVPreview(props){
                     <div className="preview-experience">
                         <h2 className="preview-subtitle">Experience</h2>
                             <hr />
-                            <CVPreviewExperience experience={props.experience}/>
-                            <CVPreviewExperience experience={props.experience}/>
-                            <CVPreviewExperience experience={props.experience}/>
+                            {cvPreviewExperienceElements}
                     </div>
 
                     <div className="preview-education">
