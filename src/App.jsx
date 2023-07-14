@@ -15,24 +15,13 @@ function App() {
     description: "",
   })
 
-
-  // const [experience, setExperience] = React.useState({
-  //   id: 1,
-  //   position: "",
-  //   company: "",
+  // const [education, setEducation] = React.useState({
+  //   university: "",
+  //   degree: "",
+  //   subject: "",
   //   dateFrom: "",
   //   dateTo: "",
   // })
-  // RUDIMENTARY ^^^
-  
-
-  const [education, setEducation] = React.useState({
-    university: "",
-    degree: "",
-    subject: "",
-    dateFrom: "",
-    dateTo: "",
-  })
   // RUDIMENTARY ^^^
 
   function updatePersonalInfo(event){
@@ -166,7 +155,7 @@ function updateEducation(event, id){
         <CVPreview 
         personalInfo={personalInfo} 
         experiences={experiences}
-        education={education}/>
+        educations={educations}/>
       </main>
     </div>
   );

@@ -16,6 +16,17 @@ export default function CVPreview(props){
         />
     ))
 
+    const cvPreviewEducationElements = props.educations.map(education => (
+        <CVPreviewEducation 
+            id = {education.id}
+            university = {education.university}
+            degree = {education.degree}
+            subject = {education.subject}
+            dateFrom = {education.dateFrom}
+            dateTo = {education.dateTo}
+        />
+    ))
+
     // console.log(props.personalInfo)
 
     return(
@@ -58,8 +69,7 @@ export default function CVPreview(props){
                     <div className="preview-education">
                         <h2 className="preview-subtitle">Education</h2>
                             <hr />
-                            <CVPreviewEducation education={props.education}/>
-                            <CVPreviewEducation education={props.education}/>
+                            {cvPreviewEducationElements}
                     </div>
 
                 </div>
