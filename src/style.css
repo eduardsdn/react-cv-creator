@@ -127,6 +127,26 @@ input[type='date'] {
     max-width: 25%;
 }
 
+input[type='file'] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.upload-icon {
+    width: 25px;
+    margin-left: 10px;
+}
+
+
+
+
+
 label {
     margin-top: 10px;
 }

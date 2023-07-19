@@ -38,7 +38,7 @@ export default function CVPreview(props){
 
                 <div className="preview-sideBar">
 
-                    <img src={defaultPhoto} alt="" className="photo"/>
+                    <img src={props.avatarPhoto} alt="" className="photo"/>
 
                     <div className="presonalDetailsPreview">
                         <h1 className="presonalDetailsPreview-title">Personal Details</h1>

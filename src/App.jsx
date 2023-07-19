@@ -2,6 +2,8 @@ import React from "react";
 import Header from "./components/Header";
 import CVForm from "./components/CVForm";
 import CVPreview from "./components/CVPreview";
+import defaultPhoto from "./assets/default_photo.jpg"
+
 
 function App() {
 
@@ -135,6 +137,27 @@ function updateEducation(event, id){
   console.log(educations)
 }
 // EDUCATION-----------------------------------------------------------------------------
+
+// PHOTO HANDILNG
+
+const[avatarPhoto, setAvatarPhoto] = React.useState(defaultPhoto)
+
+function handleImageChange(event) {
+  const file = event.target.files[0]
+  if(file) {
+    const reader = new FileReader()
+    console.log(reader)
+    reader.onloadend = () => {
+      setAvatarPhoto(reader.result)
+    }
+    reader.readAsDataURL(file)
+  }
+  else {
+    setAvatarPhoto(defaultPhoto)
+  }
+
+  
+}
   
   return (
     <div className="App">
@@ -142,6 +165,8 @@ function updateEducation(event, id){
       <main className="main-content">
         <CVForm
         updatePersonalInfo={updatePersonalInfo}
+
+        handleImageChange={handleImageChange}
 
         experiences={experiences}
         addExperience={addExperience}
@@ -153,6 +178,7 @@ function updateEducation(event, id){
         deleteEducation={deleteEducation}
         updateEducation={updateEducation}/>
         <CVPreview 
+        avatarPhoto={avatarPhoto}
         personalInfo={personalInfo} 
         experiences={experiences}
         educations={educations}/>
@@ -162,3 +188,6 @@ function updateEducation(event, id){
 }
 
 export default App;
+
+
+

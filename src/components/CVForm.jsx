@@ -28,7 +28,7 @@ export default function CVForm(props) {
 
     return(
         <div className="cv-form">
-            <PersonalInfoForm updatePersonalInfo={props.updatePersonalInfo}/>
+            <PersonalInfoForm updatePersonalInfo={props.updatePersonalInfo} handleImageChange={props.handleImageChange}/>
             {experienceElements}
             {/* <ExperienceForm updateExperience={props.updateExperience} addExperience={props.addExperience}/> */}
             {educationElements}
