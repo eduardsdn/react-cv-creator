@@ -5,34 +5,45 @@ import ExperienceForm from "./ExperienceForm"
 
 
 
-export default function CVForm(props) {
+export default function CVForm(
+    {experiences,
+    educations,
+    updateEducation, 
+    addEducation, 
+    deleteEducation, 
+    addExperience,
+    deleteExperience,
+    updateExperience,
+    updatePersonalInfo,
+    handleImageChange,
+    handlePrint}) {
 
-    const experienceElements = props.experiences.map(experience => (
+    const experienceElements = experiences.map(experience => (
         <ExperienceForm 
         key={experience.id}
         id={experience.id} 
-        updateExperience={props.updateExperience} 
-        addExperience={props.addExperience}
-        deleteExperience={props.deleteExperience}
+        updateExperience={updateExperience} 
+        addExperience={addExperience}
+        deleteExperience={deleteExperience}
         />
     ))
 
-    const educationElements = props.educations.map(education => (
+    const educationElements = educations.map(education => (
         <EducationForm 
             key={education.id}
             id={education.id}
-            updateEducation={props.updateEducation}
-            addEducation={props.addEducation}
-            deleteEducation={props.deleteEducation}
+            updateEducation={updateEducation}
+            addEducation={addEducation}
+            deleteEducation={deleteEducation}
         />
     ))
 
     return(
         <div className="cv-form">
-            <PersonalInfoForm updatePersonalInfo={props.updatePersonalInfo} handleImageChange={props.handleImageChange}/>
+            <PersonalInfoForm updatePersonalInfo={updatePersonalInfo} handleImageChange={handleImageChange}/>
             {experienceElements}
             {educationElements}
-            <div className="exportPDF-wrapper"><button className="exportPDF button" onClick={props.handlePrint}>Export as PDF</button></div>
+            <div className="exportPDF-wrapper"><button className="exportPDF button" onClick={handlePrint}>Export as PDF</button></div>
         </div>
     )
 }

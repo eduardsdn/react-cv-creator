@@ -91,7 +91,6 @@ table {
 
 .cv-form {
     background-color: #C8B6A6;
-    /* width: 800px; */
     width: 200mm;
     padding-top: 10px;
     padding-bottom: 20px;
@@ -152,10 +151,6 @@ input[type='file'] {
     margin-left: 10px;
 }
 
-
-
-
-
 label {
     margin-top: 10px;
 }
@@ -189,7 +184,6 @@ label {
 .cv-preview {
     position: sticky;
     top: 0;
-    /* align-self: flex-start; */
     background-color: #f3f1f1;
     width: 210mm;
     height: 297mm;
@@ -197,6 +191,9 @@ label {
     box-shadow: rgba(149, 157, 165, 0.726) 0px 8px 24px;
 }
 
+.main-preview-hr {
+   width: 140mm;
+}
 
 .preview-main-content {
     display: flex;

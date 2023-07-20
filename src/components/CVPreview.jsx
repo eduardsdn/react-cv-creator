@@ -3,10 +3,14 @@ import CVPreviewHeader from "./CVPreviewHeader"
 import CVPreviewExperience from "./CVPreviewExpreience"
 import CVPreviewEducation from "./CVPreviewEducation"
 
-const CVPreview = React.forwardRef((props, ref) => {
+const CVPreview = React.forwardRef(({experiences, 
+    educations, 
+    personalInfo, 
+    avatarPhoto}, 
+    ref) => {
     
 
-    const cvPreviewExperienceElements = props.experiences.map(experience => (
+    const cvPreviewExperienceElements = experiences.map(experience => (
         <CVPreviewExperience
         key = {experience.id}
         id = {experience.id}
@@ -17,7 +21,7 @@ const CVPreview = React.forwardRef((props, ref) => {
         />
     ))
 
-    const cvPreviewEducationElements = props.educations.map(education => (
+    const cvPreviewEducationElements = educations.map(education => (
         <CVPreviewEducation 
             id = {education.id}
             university = {education.university}
@@ -33,23 +37,23 @@ const CVPreview = React.forwardRef((props, ref) => {
     return(
         <div className="cv-preview" ref={ref}>
 
-            <CVPreviewHeader personalInfo={props.personalInfo}/>
+            <CVPreviewHeader personalInfo={personalInfo}/>
 
             <main className="preview-main-content">
 
                 <div className="preview-sideBar">
 
-                    <img src={props.avatarPhoto} alt="" className="photo"/>
+                    <img src={avatarPhoto} alt="" className="photo"/>
 
                     <div className="presonalDetailsPreview">
                         <h1 className="presonalDetailsPreview-title">Personal Details</h1>
-                        <hr />
+                        <hr className="sidebar-preview-hr"/>
                         <h2 className="preview-subtitle">Adress</h2>
-                        <p>{props.personalInfo.address}</p>
+                        <p>{personalInfo.address}</p>
                         <h2 className="preview-subtitle">Phone Number</h2>
-                        <p>{props.personalInfo.phone}</p>
+                        <p>{personalInfo.phone}</p>
                         <h2 className="preview-subtitle">Email</h2>
-                        <p>{props.personalInfo.email}</p>
+                        <p>{personalInfo.email}</p>
                     </div>
                 </div>
 
@@ -57,19 +61,19 @@ const CVPreview = React.forwardRef((props, ref) => {
 
                     <div className="preivew-description">
                         <h2 className="preview-subtitle">Description</h2>
-                        <hr />
-                        <p className="preview-description-text">{props.personalInfo.description}</p>
+                        <hr className="main-preview-hr"/>
+                        <p className="preview-description-text">{personalInfo.description}</p>
                     </div>
 
                     <div className="preview-experience">
                         <h2 className="preview-subtitle">Experience</h2>
-                            <hr />
+                            <hr className="main-preview-hr"/>
                             {cvPreviewExperienceElements}
                     </div>
 
                     <div className="preview-education">
                         <h2 className="preview-subtitle">Education</h2>
-                            <hr />
+                            <hr className="main-preview-hr"/>
                             {cvPreviewEducationElements}
                     </div>
 
