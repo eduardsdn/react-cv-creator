@@ -1,8 +1,13 @@
 import React from "react";
+import { useReactToPrint } from 'react-to-print';
+
 import Header from "./components/Header";
 import CVForm from "./components/CVForm";
 import CVPreview from "./components/CVPreview";
 import defaultPhoto from "./assets/default_photo.jpg"
+
+
+
 
 
 function App() {
@@ -140,6 +145,7 @@ function updateEducation(event, id){
 
 // PHOTO HANDILNG
 
+
 const[avatarPhoto, setAvatarPhoto] = React.useState(defaultPhoto)
 
 function handleImageChange(event) {
@@ -155,9 +161,15 @@ function handleImageChange(event) {
   else {
     setAvatarPhoto(defaultPhoto)
   }
-
-  
 }
+
+// EXPORT CVPREVIEW TO PDF HANDLER
+
+const componentRef = React.useRef();
+
+const handlePrint = useReactToPrint({
+  content: () => componentRef.current
+});
   
   return (
     <div className="App">
@@ -177,17 +189,26 @@ function handleImageChange(event) {
         addEducation={addEducation}
         deleteEducation={deleteEducation}
         updateEducation={updateEducation}/>
+
         <CVPreview 
+        ref={componentRef}
         avatarPhoto={avatarPhoto}
         personalInfo={personalInfo} 
         experiences={experiences}
-        educations={educations}/>
+        educations={educations} 
+        />
       </main>
+
+      <button className="exportPDF-button" onClick={handlePrint}>Export as PDF</button>
     </div>
+
+    
   );
 }
 
 export default App;
+
+
 
 
 

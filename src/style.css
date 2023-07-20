@@ -72,6 +72,7 @@ table {
 
 /* main */
 .main-content {
+    margin-top: 50px;
     padding-left: 100px;
     padding-right: 100px;
     display: flex;
@@ -81,7 +82,7 @@ table {
 /* CVForm */
 
 .cv-form {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background-color: #C8B6A6;
     min-width: 800px;
     padding-top: 10px;
@@ -168,9 +169,12 @@ label {
 
 /* CV Preview */
 .cv-preview {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background-color: #f3f1f1;
-    width: 800px;
+    /* width: 800px; */
+    width: 210mm;
+    height: 297mm;
+    position: sticky;
     overflow-y: hidden;
     box-shadow: rgba(149, 157, 165, 0.726) 0px 8px 24px;
 }

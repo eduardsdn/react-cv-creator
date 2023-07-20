@@ -1,3 +1,4 @@
+import React from "react"
 import PersonalInfoForm from "./PersonalInfoForm"
 import EducationForm from "./EducationForm"
 import ExperienceForm from "./ExperienceForm"
@@ -30,9 +31,7 @@ export default function CVForm(props) {
         <div className="cv-form">
             <PersonalInfoForm updatePersonalInfo={props.updatePersonalInfo} handleImageChange={props.handleImageChange}/>
             {experienceElements}
-            {/* <ExperienceForm updateExperience={props.updateExperience} addExperience={props.addExperience}/> */}
             {educationElements}
-            {/* <EducationForm updateEducation={props.updateEducation}/> */}
         </div>
     )
 }

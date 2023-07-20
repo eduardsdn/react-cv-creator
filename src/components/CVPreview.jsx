@@ -1,9 +1,10 @@
+import React from "react"
 import CVPreviewHeader from "./CVPreviewHeader"
 import CVPreviewExperience from "./CVPreviewExpreience"
 import CVPreviewEducation from "./CVPreviewEducation"
-import defaultPhoto from "../assets/default_photo.jpg"
 
-export default function CVPreview(props){
+const CVPreview = React.forwardRef((props, ref) => {
+    
 
     const cvPreviewExperienceElements = props.experiences.map(experience => (
         <CVPreviewExperience
@@ -30,7 +31,7 @@ export default function CVPreview(props){
     // console.log(props.personalInfo)
 
     return(
-        <div className="cv-preview">
+        <div className="cv-preview" ref={ref}>
 
             <CVPreviewHeader personalInfo={props.personalInfo}/>
 
@@ -77,6 +78,7 @@ export default function CVPreview(props){
             </main>
         </div>
     )
-}
+})
 
+export default CVPreview
 
