@@ -188,7 +188,10 @@ const handlePrint = useReactToPrint({
         educations={educations}
         addEducation={addEducation}
         deleteEducation={deleteEducation}
-        updateEducation={updateEducation}/>
+        updateEducation={updateEducation}
+        
+        handlePrint={handlePrint}
+        />
 
         <CVPreview 
         ref={componentRef}
@@ -198,8 +201,6 @@ const handlePrint = useReactToPrint({
         educations={educations} 
         />
       </main>
-
-      <button className="exportPDF-button" onClick={handlePrint}>Export as PDF</button>
     </div>
 
     

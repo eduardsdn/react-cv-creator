@@ -32,6 +32,7 @@ export default function CVForm(props) {
             <PersonalInfoForm updatePersonalInfo={props.updatePersonalInfo} handleImageChange={props.handleImageChange}/>
             {experienceElements}
             {educationElements}
+            <div className="exportPDF-wrapper"><button className="exportPDF button" onClick={props.handlePrint}>Export as PDF</button></div>
         </div>
     )
 }

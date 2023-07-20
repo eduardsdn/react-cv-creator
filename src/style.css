@@ -76,15 +76,23 @@ table {
     padding-left: 100px;
     padding-right: 100px;
     display: flex;
+    gap: 60px;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 1500px) {
+        .main-content{
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 
 /* CVForm */
 
 .cv-form {
-    /* margin-top: 50px; */
     background-color: #C8B6A6;
-    min-width: 800px;
+    /* width: 800px; */
+    width: 200mm;
     padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 20px;
@@ -167,22 +175,31 @@ label {
     background-color:#8D7B68;
 }
 
+.exportPDF-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.exportPDF {
+   background-color: rgb(148, 5, 5);
+   font-weight: 700;
+}
+
 /* CV Preview */
 .cv-preview {
-    /* margin-top: 50px; */
+    position: sticky;
+    top: 0;
+    /* align-self: flex-start; */
     background-color: #f3f1f1;
-    /* width: 800px; */
     width: 210mm;
     height: 297mm;
-    position: sticky;
     overflow-y: hidden;
     box-shadow: rgba(149, 157, 165, 0.726) 0px 8px 24px;
 }
 
+
 .preview-main-content {
-    /* height: 100%; */
     display: flex;
-    /* background-color: aqua; */
     height:100%;
 }
 
